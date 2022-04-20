@@ -6,7 +6,6 @@ function zero(op) {
         return op(0);
     }
 }
-
 function one(op) {
     if (!op) {
         return 1;
