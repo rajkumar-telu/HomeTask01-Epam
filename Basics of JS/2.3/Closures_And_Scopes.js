@@ -6,4 +6,5 @@ function createFunctions(n){
             return i;
         });
     }
+    return callbacks;
 }
