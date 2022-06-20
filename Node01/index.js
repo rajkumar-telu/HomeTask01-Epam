@@ -1,8 +1,9 @@
 console.log(process.argv);
-let args = process.argv.slice(2);
-console.log(args);
-let arr = args.slice(2,args.length).map(Number);
-console.log(arr);
+let [,,...args] = process.argv;
+let [,...arr] = args;
+arr = arr.map(Number);
+
+console.log(args+'\n'+arr);
 
 function calculate(){
     checkValidInput();
