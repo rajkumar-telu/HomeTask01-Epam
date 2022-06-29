@@ -7,7 +7,7 @@ const fetchBookLoading = () => {
     }
 }
 
-const fetchBookSucess = (data:any) => {
+const fetchBookSuccess = (data:any) => {
     return {
         type:FETCH_BOOK_SUCCESS,
         payload:data
@@ -33,7 +33,7 @@ export const fetchBooks = () => async (dispatch:any) => {
         dispatch(fetchBookLoading());
         const response = await axios.get("http://localhost:3000/books");
         console.log("in books.tsx",response.data);
-        dispatch(fetchBookSucess(response.data))
+        dispatch(fetchBookSuccess(response.data))
     }catch(ex){
         dispatch(fetchBookFail())
     }

@@ -97,7 +97,6 @@ const Cart = () => {
         </div>
       </div>
       <div className="shopping">
-        <h4>Shopping Bag</h4>
         {price!== 0 ?
         <>
         <div className="shoppingBag">

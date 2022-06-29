@@ -7,7 +7,6 @@ const subtitle = title ? ' | '+title : '';
   return (
     <header data-testid='header-comp'>
       <h2 className="title">eCommerce Site {subtitle} </h2> 
-      {/* <span className='subtitle'>{title}</span> */}
       <nav className="links">
         <Link to="/">Home |</Link>
         <Link to="/orders"> My orders |</Link>
