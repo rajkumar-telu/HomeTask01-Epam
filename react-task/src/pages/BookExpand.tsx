@@ -5,7 +5,7 @@ import { fetchBookById } from "../redux/actions/books";
 import { addToCart } from "../redux/actions/store";
 
 const BookExpand = (props: any) => {
-  const {book} = useSelector((state:any) => state.book);
+  const { book } = useSelector((state: any) => state.book);
 
   const params = useParams();
   const id: string = params.id!;
@@ -24,15 +24,18 @@ const BookExpand = (props: any) => {
   }, [dispatch, id]);
 
   const add = () => {
-    dispatch(addToCart(book) as any)
-    alert("Added to cart")
-  }
+    dispatch(addToCart(book) as any);
+    document.querySelector(".btn-cart")!.innerHTML = "Added to cart✔️";
+    setTimeout(() => {
+      document.querySelector(".btn-cart")!.innerHTML = "Add to cart";
+    }, 1000);
+  };
 
   const buy = (e: any) => {
     e.stopPropagation();
     dispatch(addToCart(book) as any);
     navigateToCart();
-  }
+  };
 
   return (
     <div className="bookInfo">
@@ -41,13 +44,19 @@ const BookExpand = (props: any) => {
       </div>
       <div className="book-details">
         <div className="title">{book.title}</div>
-        <div className="price">Book Price: ₹{parseFloat(book.price).toFixed(2)}</div>
+        <div className="price">
+          Book Price: ₹{parseFloat(book.price).toFixed(2)}
+        </div>
         <div className="authors">Author Name: {book.author}</div>
         <div className="pageCount">Page Count: : {book.pageCount}</div>
         <div className="isbn">ISBN:{book.ISBN}</div>
         <div className="options">
-          <button className="btn btn-primary btn-cart" onClick={add}>Add to Cart</button>
-          <button className="btn btn-primary" onClick={buy}>Buy Now</button>
+          <button className="btn btn-primary btn-cart" onClick={add}>
+            Add to Cart
+          </button>
+          <button className="btn btn-primary" onClick={buy}>
+            Buy Now
+          </button>
         </div>
       </div>
       <p className="desc">{book.description}</p>
@@ -56,4 +65,3 @@ const BookExpand = (props: any) => {
 };
 
 export default BookExpand;
-
