@@ -24,7 +24,7 @@ const Cart = () => {
         acc[curr.id] = {...curr,count:1};
       return acc;
     },{});
-    setCart(Object.values(tempCart));
+    setCart(Object.values(tempCart));    
   },[dispatch,cart]);
 
   const saveAddress = (e:any) => {
@@ -91,7 +91,7 @@ const Cart = () => {
             </div>
             <div className='options'>
               <button className="btn" onClick={saveAddress} disabled={!edit}>Save Address</button>
-              <button type="button" onClick={editAddress} disabled={edit}>Edit Address</button>
+              <button type="button" className="btn" onClick={editAddress} disabled={edit}>Edit Address</button>
             </div>
           </form>
         </div>
@@ -102,7 +102,7 @@ const Cart = () => {
         <div className="shoppingBag">
           <h4>Shopping Bag</h4>
           <ol>
-            {cart.map((book:any) => (<li key={book.id}>{book.title}</li>))}
+            {cartDetails.map((book:any) => (<li key={book.id}> <b>{book.title}</b> X {book.count}</li>))}
           </ol>
         </div>
         <div className="paymentInfo">

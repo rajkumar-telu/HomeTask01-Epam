@@ -139,7 +139,7 @@ header .title{
   margin: 2rem 2rem;
   row-gap: 2rem;
   column-gap: 1rem;
-  grid-template-columns: repeat(auto-fit);
+  grid-template-columns: repeat(auto-fit,minmax(20rem,1fr));
 }
 
 .address label{
@@ -153,7 +153,9 @@ header .title{
   background-color: var(--white);
 }
 
-.paymentInfo,.shoppingBag,.shipping{
+.paymentInfo,
+.shoppingBag,
+.shipping{
   box-shadow: 0px 0px 10px 2px var(--primary-color-light);
   padding: 1rem;
 }
