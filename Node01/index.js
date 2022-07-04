@@ -1,13 +1,11 @@
 console.log(process.argv);
-let [,,...args] = process.argv;
-let [,...arr] = args;
-arr = arr.map(Number);
+let [,,,op,...args] = process.argv;
+console.log(args);
+args = args.map(Number);
 
-console.log(args+"\n"+arr);
 
 function calculate(){
-    checkValidInput();
-    let op = args[0]
+    checkValidInput(); 
     switch(op){
         case 'addition':
             add();
@@ -27,8 +25,8 @@ function calculate(){
 }
 
 function checkValidInput(){
-    if(arr.length > 0){
-        arr.forEach(ele => {
+    if(args.length > 0){
+        args.forEach(ele => {
             if(isNaN(ele)){
                 console.error('Invalid input given');
                 return;
@@ -42,30 +40,30 @@ function checkValidInput(){
 
 function add(){
     console.log('Operation: Addition');
-    let sum = arr.reduce((a,b) => (a+b));
+    let sum = args.reduce((a,b) => (a+b));
     console.log(sum);
 }
 
 function mul(){
     console.log('Operation: Multiplication');
-    let prod = arr.reduce((a,b) => (a*b));
+    let prod = args.reduce((a,b) => (a*b));
     console.log(prod); 
 }
 
 function sub(){
-    if(arr.length!=2){
+    if(args.length!=2){
         console.error('For subtraction enter only two numbers');
     }else{
-        let diff = arr.reduce((a,b) => (a-b));
+        let diff = args.reduce((a,b) => (a-b));
         console.log('Operation: Subtraction\n',diff);
     }
 }
 
 function div(){
-    if(arr.length!=2){
+    if(args.length!=2){
         console.error('For division enter only two numbers');
     }else{
-        let quotient = arr.reduce((a,b) => (a/b));
+        let quotient = args.reduce((a,b) => (a/b));
         console.log('Operation: Division\n',quotient);
     }
 }
