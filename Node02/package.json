@@ -1,0 +1,26 @@
+{
+  "name": "node02",
+  "version": "1.0.0",
+  "description": "Home Task 5.3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "set PORT=3001 && nodemon --exec babel-node index.js"
+  },
+  "author": "Raj",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/eslint-parser": "^7.18.2",
+    "express": "^4.18.1",
+    "joi": "^17.6.0",
+    "nodemon": "^2.0.16"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "@babel/node": "^7.17.10",
+    "@babel/preset-env": "^7.18.2",
+    "eslint": "^8.16.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0"
+  }
+}
